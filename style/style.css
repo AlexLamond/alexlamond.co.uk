@@ -1,0 +1,319 @@
+::selection {
+   background-color: rgb(164, 152, 255);
+   color: rgb(255, 255, 255);
+ }
+
+ body {
+   margin: 0;
+   overflow: hidden;
+   position: fixed;
+	 font-family: 'Poiret One', cursive;
+ }
+
+ #menu
+ {
+	 position: absolute;
+	 width: 40px;
+	 top: 17px;
+	 left: 10px;
+	 z-index: 100;
+	 transform: rotate(0deg);
+ }
+
+aside#nav
+{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 10;
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+#nav ul
+{
+	position: absolute;
+	background-color: rgb(255,255,255);
+	/* Set the width to 30% but don't let it get too big or too small */
+	width: 30%;
+	left: -30%;
+	min-width: 200px;
+	max-width: 350px;
+	/* Need to give a fixed height and reset the overflow for scrolling */
+	height: 100vh;
+	overflow: scroll;
+	/* Make the ul fit the div */
+	margin: 0;
+	padding: 0;
+	padding-top: 17px;
+}
+
+#nav ul li
+{
+	margin-top: 20px;
+}
+
+#nav ul li, #nav ul li *
+{
+	/* Ensure no items exeed the size of the ul */
+	max-width: 100%;
+	list-style: none;
+}
+
+#nav ul li p, #nav ul h2
+{
+	margin: 5px;
+}
+
+.featuredImage
+{
+	position: relative;
+}
+
+.featuredImage a
+{
+	position: absolute;
+	/* Needs to be 3px from the bottom or we get an odd grey bottom */
+	bottom: 3px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	background-color: rgba(128,128,128, 0.5);
+	color: white;
+	text-decoration: none;
+}
+
+.featuredImage p
+{
+	position: absolute;
+	top: 0px;
+	right: 0;
+	color: white;
+}
+
+.featuredImage a:hover > h3
+{
+	color: aqua;
+	transition: color 0.5s;
+	-webkit-transition: color 0.5s;
+}
+
+.no-webp #bgimg {
+  background-image: url("/images/Copenhagen copy.JPG");
+}
+
+.webp #bgimg{
+  background-image: url("/images/Copenhagen.webp");
+}
+
+ #bgimg {
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   width: 102vw;
+   height: 102vh;
+   position: absolute;
+   left: -10px;
+   top: -10px;
+
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+ }
+
+#main
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+ #main h1 {
+   position: relative;
+   text-align: center;
+   margin: 0;
+   top: 30vh;
+   font-size: 4em;
+   color: rgb(0, 0, 0);
+   opacity: 1;
+   animation: 2s ease-out 0s 1 header;
+ }
+
+ #main p {
+   position: relative;
+   text-align: center;
+   margin: 0;
+   top: 35vh;
+   font-size: 1.25em;
+   color: rgb(255, 255, 255);
+   animation: 2s ease-out 0s 1 para;
+ }
+
+ #social {
+   position: fixed;
+   top: 80vh;
+	 /* Left should always be (50% - -20 + (40 * number of items)) */
+   left: calc(50% - 60px);
+ }
+
+ #social a
+ {
+	 position: relative;
+   	 margin: auto;
+     width: 8%;
+     text-decoration:none; 
+}
+
+ #social a:nth-child(1) {
+   animation: 0.5s ease-out 0s 1 social;
+ }
+
+ #social a:nth-child(2) {
+   animation: 1s ease-out 0s 1 social;
+ }
+
+ #social a:nth-child(3) {
+   animation: 1.5s ease-out 0s 1 social;
+ }
+
+
+ #social a:nth-child(4) {
+   animation: 2s ease-out 0s 1 social;
+ }
+
+ #social a img {
+   border-radius: 100px;
+   height: 40px;
+ }
+
+.tooltipster-content {
+    font-family: 'Poiret One', cursive;
+}
+
+@media only screen and (max-width: 360px) {
+	.floater
+	{
+		display: none;
+	}
+}
+@media only screen and (max-width: 469px) {
+	.floater
+	{
+		width:90vw;
+		background-color: #1DA1F2;
+		border-radius: 10px;
+		position: absolute;
+		top: 10px;
+		color: white;
+		padding: 5px;
+		margin-left: 3.5vw;
+		font-size: 16px;
+	}
+	#menu {
+		visibility: hidden;
+	}
+}
+@media only screen and (min-width: 470px) {
+.floater
+{
+	width:400px;
+	background-color: #1DA1F2;
+	border-radius: 10px;
+	color: white;
+	right: 20px;
+	position: absolute;
+}
+.floater.top
+{
+	top: 20px;
+}
+.floater.bottom
+{
+	bottom: 70px;
+}
+#menu {
+	visibility: visible;
+}
+}
+
+.floater > p
+{
+	text-align: justify;
+}
+
+#latestTweet > #twitterHeader
+{
+	display: inline-flex;
+	height: 30px;
+	margin-left: 10px;
+}
+
+#latestTweet > #twitterHeader > p#sentAt
+{
+	right: 15px;
+	position: absolute;
+}
+
+#twitterBody{
+	animation: 4s ease-out 0s 1 twitter;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/* Keyframes */
+
+ @keyframes social {
+   0% {
+     bottom: -10vh;
+     opacity: 0;
+   }
+   100% {
+     bottom: 0vh;
+     opacity: 1;
+   }
+ }
+
+ @keyframes para {
+   0% {
+     top: 40vh;
+     opacity: 0;
+     color: rgb(0, 0, 0);
+   }
+   100% {
+     top: 35vh;
+     opacity: 1;
+     color: rgb(255, 255, 255);
+   }
+ }
+
+ @keyframes header {
+   0% {
+     top: 25vh;
+     opacity: 0;
+     color: rgb(255, 255, 255);
+   }
+   100% {
+     top: 30vh;
+     opacity: 1;
+     color: rgb(0, 0, 0);
+   }
+ }
+
+ @keyframes twitter {
+	 0% {
+			 max-height: 0px;
+			 opacity: 0;
+	 }
+	 45%
+	 {
+		 opacity: 0;
+	 }
+	 100% {
+		 max-height: 70px;
+		 opacity: 1;
+	 }
+ }
